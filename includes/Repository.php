@@ -84,6 +84,7 @@ class Repository {
     }
   }
   
+  
   public function traiteFindBy($methode, $params){
     $criteres = str_replace("findBy", "", $methode);
     $criteres = explode("_and_", $criteres);
