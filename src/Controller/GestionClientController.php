@@ -26,6 +26,9 @@ class GestionClientController {
     $r = new ReflectionClass($this);
     $vue = str_replace('Controller', 'View', $r->getShortName()) . "/unClient.html.twig";
     MyTwig::afficheVue($vue, $params);
+    //} else {
+            //throw new Exception("Client" . $id . " inconnu");
+        //}
   }
   
   
