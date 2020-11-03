@@ -77,7 +77,7 @@ class GestionClientController {
   
   public function nbClients($params){
       $repository = Repository::getRepository("APP\Entity\Client");
-      $nbClients= $repository_>countRows();
+      $nbClients= $repository->countRows();
       echo "nombre de clients : " . $nbClients;
   }
 }

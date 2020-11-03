@@ -103,4 +103,11 @@ class Repository {
       return $lignes->fetchAll();
     }
   }
+  
+  public function findColumnDistinctValues($colonne){
+      $sql = "select distinct " . $colinne . " libelle from " . $this->table . " order by 1";
+      //retun $this->connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+      $tab = $this->connexion->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+      return $tab;
+  }
 }
