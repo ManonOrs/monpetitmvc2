@@ -38,7 +38,7 @@ class GestionClientController {
     $clients = $repository->FindAll();
     if ($clients) {
       $r = new ReflectionClass($this);
-      $vue = str_replace('Controller', 'View', $r->getShortName()) . "/plsClients.html.twig";
+      $vue = str_replace('Controller', 'View', $r->getShortName()) . "/plusieursClients.html.twig";
       MyTwig::afficheVue($vue, array('clients' => $clients));
       //include_once PATH_VIEW . str_replace('Controller', 'View', $r->getShortName()) . "/plusieursClients.php";
     } else {

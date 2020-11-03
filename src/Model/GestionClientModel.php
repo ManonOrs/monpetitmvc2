@@ -46,6 +46,7 @@ class GestionClientModel {
       $lignes = $unObjetPdo->query($sql);
       // on va configurer le mode objet pour la lisibilité du code
       if($lignes->rowCount() > 0){
+          //$lignes->setFetchMode();
           $t = $lignes->fetchAll(PDO::FETCH_ASSOC);
           return $t;
       } else {

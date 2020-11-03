@@ -1,5 +1,4 @@
 <?php
-
 namespace APP\Controller;
 
 use APP\Model\GestionCommandeModel;
@@ -26,7 +25,7 @@ class GestionCommandeController {
     $vue = str_replace('Controller', 'View', $r->getShortName()) . "/uneCommande.html.twig";
     MyTwig::afficheVue($vue, $params);
   }
-  
+
   public function chercheToutes() {
     $model = new GestionCommandeModel();
     $commandes = $model->findAllCommande();
@@ -37,4 +36,5 @@ class GestionCommandeController {
       throw new Exception("Aucune Commande a afficher");
     }
   }
+
 }
