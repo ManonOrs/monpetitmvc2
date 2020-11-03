@@ -33,4 +33,14 @@ class GestionCommandeController {
     MyTwig::afficheVue($vue, $params);
   }
   
+  public function chercheToutes() {
+    $model = new GestionCommandeModel();
+    $commandes = $model->findAllCommande();
+    if ($commandes) {
+      $r = new ReflectionClass($this);
+      include_once PATH_VIEW . str_replace('Controller', 'View', $r->getShortName()) . "/plusieursCommandes.php";
+    } else {
+      throw new Exception("Aucune Commande a afficher");
+    }
+  }
 }
